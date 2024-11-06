@@ -3,8 +3,9 @@
 //
 public class Board{
 	
-	public static int ships[][] = new int[10][10]; //this is so that the compiler doesnt pee itself
-	/*public static void main(String[] args){
+	public static int ships[][];
+	public static int guess[][]; //this is so that the compiler doesnt pee itself
+/*public static void main(String[] args){
 		//TEST THING
 		for(int i=0; i<10; i++){
 			for(int h=0; h<10; h++){
@@ -15,14 +16,20 @@ public class Board{
 	}
 	*/
 	public Board(){
-		int ships[][] = new int[10][10];
-		int guess[][] = new int[10][10];
+		 ships = new int[10][10];
+		 guess = new int[10][10];
 		
+	}
+	public static void setShipsBoard(int row, int column, int set){
+		ships[row][column] = set;
+	}
+	public static int[][] getShipsBoard(){
+		return ships;
 	}
 	public boolean checkShip(int row, int column){
 		return (ships[row][column]==1);
 	}
-	public static void printBoard(/*Board boardTemp*/){
+	public static void printShipsBoard(){
 		for(int r=0; r<10; r++){
 			for(int x=0; x<10;x++){
 				System.out.print("----");

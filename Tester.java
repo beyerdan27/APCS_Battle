@@ -7,5 +7,5 @@ public class Tester{
 		System.out.println(temp.checkShip(3, 4));
 		temp.printShipsBoard();
 	}
-}
+} 
                     

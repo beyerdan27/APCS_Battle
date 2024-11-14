@@ -20,10 +20,10 @@ public class Board{
 		 guess = new int[10][10];
 		
 	}
-	public static void setShipsBoard(int row, int column, int set){
+	public void setShipsBoard(int row, int column, int set){
 		ships[row][column] = set;
 	}
-	public static int[][] getShipsBoard(){
+	public int[][] getShipsBoard(){
 		return ships;
 	}
 	public boolean checkShip(int row, int column){
@@ -32,25 +32,25 @@ public class Board{
 	public int placeEntireShip(int startRow, int startColumn, boolean isHorizontal, int shipLength){
 		//checking if even on board
 		if(isHorizontal){
-			if((startColumn>=(9-shipLength)||startColumn<0)||(startRow<0||startRow>9)){
-				return 400;
+			if((startColumn>(10-shipLength)||startColumn<0)||(startRow<0||startRow>9)){
+				return 401;
 			}
 		} else {
-			if((startRow>=(9-shipLength)||startRow<0)||(startColumn<0||startColumn>9)){
-				return 400;
+			if((startRow>(10-shipLength)||startRow<0)||(startColumn<0||startColumn>9)){
+				return 402;
 			}
 		}
 		//checking if not occupied
 		 if(isHorizontal){
 			for(int i=0; i<shipLength; i++){
 				if(ships[startRow][startColumn+i]!=0){
-					return 400;
+					return 403;
 				}
 			}
 		} else {
 			for(int i=0; i<shipLength; i++){
 				if(ships[startRow+i][startColumn]!=0){
-					return 400;
+					return 404;
 				}
 			}
 			
@@ -67,7 +67,7 @@ public class Board{
 		}
 		return 200;
 	}
-	public static void printShipsBoard(){
+	public void printShipsBoard(){
 		for(int r=0; r<10; r++){
 			for(int x=0; x<10;x++){
 				System.out.print("----");

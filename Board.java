@@ -75,7 +75,11 @@ public class Board{
 			System.out.print("-\n");
 			for(int c=0; c<10; c++){
 				System.out.print("| ");
-				System.out.print(ships[r][c]);
+				if(ships[r][c]==0){
+					System.out.print(" ");
+				} else {
+					System.out.print(ships[r][c]);
+				}
 				System.out.print(" ");
 			}
 	System.out.print("|\n");

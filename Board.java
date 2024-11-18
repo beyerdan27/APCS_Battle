@@ -29,9 +29,9 @@ public class Board{
 	public boolean checkShip(int row, int column){
 		return (ships[row][column]==1);
 	}
-	public int placeEntireShip(int startRow, int startColumn, boolean isHorizontal, int shipLength){
+	public int placeShip(int shipLength, int startRow, int startColumn, boolean isVertical){
 		//checking if even on board
-		if(isHorizontal){
+		if(!isVertical){
 			if((startColumn>(10-shipLength)||startColumn<0)||(startRow<0||startRow>9)){
 				return 401;
 			}
@@ -41,7 +41,7 @@ public class Board{
 			}
 		}
 		//checking if not occupied
-		 if(isHorizontal){
+		 if(!isVertical){
 			for(int i=0; i<shipLength; i++){
 				if(ships[startRow][startColumn+i]!=0){
 					return 403;
@@ -56,7 +56,7 @@ public class Board{
 			
 		}
 		//actually placing ship
-		if(isHorizontal){
+		if(!isVertical){
 			for(int i=0; i<shipLength; i++){
 				ships[startRow][startColumn+i]=shipLength;
 			}

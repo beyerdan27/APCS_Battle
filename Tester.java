@@ -7,12 +7,13 @@ public class Tester{
 		System.out.println(temp.checkShip(3, 4));
 		temp.printShipsBoard();
 		//printing all five ships
-		temp.placeEntireShip(2, 3, true, 2);
-		temp.placeEntireShip(5, 6, false, 3);
-		temp.placeEntireShip(9, 4, true, 3);
-		temp.placeEntireShip(2, 9, false, 5);
-		int output = temp.placeEntireShip(6, 0, false, 4);
-		System.out.println(output);
+		temp.placeShip(2, 2, 3, false);
+		temp.placeShip(3, 5, 6, true);
+		temp.placeShip(3, 9, 4, false);
+		temp.placeShip(5, 2, 9, true);
+		temp.placeShip(4, 6, 0, true);
+		//int output = temp.placeEntireShip(6, 0, false, 4);
+		//System.out.println(output);
 		temp.printShipsBoard();
 	}
 }
